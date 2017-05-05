@@ -41,12 +41,29 @@ app.post('/pay', function(req, res) {
     description: paymentData.description
   }, function(error, charge) {
     if (error) {
-      console.log('!Error ', error);
-      res.json(error);
+      console.log('Error ', error);
+      res.send(error);
     } else {
-      res.json(charge);
+      res.send(charge);
     }
   });
+});
+
+
+app.post('/verify', function(req, res) {
+  var data = req.body;
+
+  stripe.tokens.create({
+    card: data
+  }, function(error, token) {
+    if (error) {
+      console.log('Error ', error);
+      res.send(error);
+    } else {
+      console.log(token);
+      res.send(token)
+    }
+  });  
 });
 
 app.listen(app.get('port'), function() {
