@@ -8,11 +8,6 @@ $ yarn install
 $ yarn start
 ```
 
-## API
-* `/pay` : create a payment 
-* `/verify` : verify a card 
-
-
 ## License
 The MIT License (MIT)
 

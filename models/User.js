@@ -1,3 +1,5 @@
+'use strict';
+
 var mongoose = require('mongoose');
 
 var schemaOptions = {
@@ -7,12 +9,12 @@ var schemaOptions = {
   }
 };
 
-var customerSchema = new mongoose.Schema({
-  account: { type: String, unique: true },
+var userSchema = new mongoose.Schema({
+  userId: { type: String, unique: true },
   email: String,
   name: String,
   customer: String,
   transactions: Array
 }, schemaOptions);
 
-module.exports = mongoose.model('Customers', customerSchema);
+module.exports = mongoose.model('Users', userSchema);
