@@ -85,7 +85,7 @@ exports.charge = function(req, res) {
     console.log(req.body);
   
     stripe.charges.create({
-      amount: req.body.amount,
+      amount: 1.99,
       currency: req.body.currency,
       customer: customer.customer, // obtained with Stripe.js
       description: req.body.description,
